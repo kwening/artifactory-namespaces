@@ -141,4 +141,4 @@ def as_list(value):
     elif isinstance(value, list):
         return value
     elif isinstance(value, str):
-        return value.split(',')
+        return [x.strip() for x in value.split(',')]

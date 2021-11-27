@@ -49,7 +49,7 @@ namespaces:
     publicThirdpartyPattern: publicthirdparty1/**
     internalThirdpartyPattern: internalthirdparty1/**
     restrictedThirdpartyPattern: restrictedthirdparty1/**
-    write: 
+    groups: 
     - group1
     - group2
     users: user1,user2
@@ -74,6 +74,6 @@ pyinstaller artifactorynamespaces/main.py --onefile
 
 Building image with `buildah`: 
 ```shell
-export TAG=$(date +"%Y%m%d-%H%M%S");buildah bud -t docker.io/kwening/artifactorynamespaces:$TAG
+export TAG=$(date +"%Y%m%d-%H%M%S");buildah bud -t docker.io/kwening/artifactorynamespaces:$TAG --format docker .
 buildah push docker.io/kwening/artifactorynamespaces:$TAG
 ```
